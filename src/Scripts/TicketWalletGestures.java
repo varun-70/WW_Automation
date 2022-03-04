@@ -17,7 +17,8 @@ public class TicketWalletGestures extends Generic{
 		Thread.sleep(1000);
 		function.tapByLocation(3, 9);
 		Thread.sleep(3000);
-		function.swipingLocation(3, 1, 3, 3);
+		function.swipingLocation(3, 0, 3, 3);
+		Thread.sleep(1000);
 		function.tapByLocation(3, 5);
 		
 	}

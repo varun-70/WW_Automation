@@ -37,7 +37,7 @@ public class PlayWorldWinners extends Generic{
 		}
 		
 		int ele = driver.findElementsByXPath("//android.widget.TextView[@text='DELETE']").size();
-		System.out.println(ele);
+		System.out.println("Number of \"Delete\" elements present "+ele);
 		
 		// Swiping down(scroll up) on the Play world winners screen
 		for(int i=1; i<=2; i++) {
