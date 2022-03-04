@@ -1,6 +1,9 @@
 package Generic;
 
+import static io.appium.java_client.touch.LongPressOptions.longPressOptions;
+
 import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.time.Duration;
 import java.util.Scanner;
@@ -23,7 +26,6 @@ import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.touch.TapOptions;
 import io.appium.java_client.touch.offset.ElementOption;
 import io.appium.java_client.touch.offset.PointOption;
-import static io.appium.java_client.touch.LongPressOptions.longPressOptions;
 
 public class Functions implements FunctionsInterface {
 
@@ -46,17 +48,23 @@ public class Functions implements FunctionsInterface {
 		elements = new ElementsStore(driver);
 	}
 
-	/* getExcelData fetches the data in the cell from the excel sheet specified by passing 
-	 * the parameter as row and cell
+	/**
+	 * Fetches the data from the excel as string, returns the fetched string value
+	 * 
+	 * @param row an integer of the row number in excel
+	 * @param cell an integer of the cell number in excel
+	 * @return the String data fetch from excel
+	 * @exception EncryptedDocumentException  if the FileInputStream is used
+	 * @exception IOException if the WorkbookFactory is used
 	 */
 	@Override
-	public String getExcelData(int r, int c) throws EncryptedDocumentException, DataFormatException, IOException {
-		FileInputStream f = new FileInputStream("./Excel sheet/data.xlsx");
-		Workbook wb = WorkbookFactory.create(f);
+	public String getExcelData(int row, int cell) throws EncryptedDocumentException, IOException  {
+		FileInputStream file = new FileInputStream("./Excel sheet/data.xlsx");
+		Workbook wb = WorkbookFactory.create(file);
 		Sheet sh = wb.getSheet("Sheet1");
-		Row row = sh.getRow(r);
-		Cell cell = row.getCell(c);
-		String data = cell.toString();
+		Row rowData = sh.getRow(row);
+		Cell cellData = rowData.getCell(cell);
+		String data = cellData.toString();
 		return data;
 	}
 
@@ -82,9 +90,11 @@ public class Functions implements FunctionsInterface {
 		return otp;
 	}
 	
-	/* This function/method is used to get the "Continue with n Button" element by using 
-	 * the dynamic input in the element.As POM (Page Object Model) should have static data 
-	 * and doesn't support dynamic data in the element.
+	/**
+	 * Gets the no. element text, click on "Continue with n Button" element dynamically
+	 * 
+	 * @return the continueWithnButton Web Element
+	 * POM (Page Object Model) should have static data and doesn't support dynamic data in the element.
 	 */
 	public WebElement getContinueWithnButton() {
 		String ticketAdded=ElementsStore.getNoOfTicketAdded().getText();
@@ -100,8 +110,12 @@ public class Functions implements FunctionsInterface {
 		return continueWithnButton;
 	}
 	
-	/* Using swipe gesture on the screen by specifying the location by passing the 
+   /**
+	* 
+	* 
+	* Using swipe gesture on the screen by specifying the location by passing the 
 	* start point (x-axis and y-axis) and end point (x-axis and y-axis) as parameters
+	* 
 	*/
 	public void swipingLocation(int xStart, int xEnd, int yStart, int yEnd) {
 		int width=size.width;
