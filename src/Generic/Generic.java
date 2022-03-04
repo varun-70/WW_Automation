@@ -44,8 +44,6 @@ public class Generic {
 		elements = new ElementsStore(driver);
 		function = new Functions(driver);
 		action = new TouchAction(driver);
-		System.out.println(driver.getContext());
-		// Robot robot = new Robot();
 
 	}
 
