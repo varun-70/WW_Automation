@@ -1,4 +1,4 @@
-package Generic;
+package generic;
 
 import java.io.File;
 import java.net.MalformedURLException;
@@ -10,15 +10,15 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 
-import Pom.ElementsStore;
 import io.appium.java_client.TouchAction;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.remote.MobileCapabilityType;
+import pom.ElementsStore;
 
 public class Generic {
 
 	public static AndroidDriver<WebElement> driver;
-	public static Functions function;
+	public static CommonFunctions function;
 	public static ElementsStore elements;
 	public static TouchAction action;
 
@@ -42,7 +42,7 @@ public class Generic {
 
 		driver = new AndroidDriver<>(url, dc);
 		elements = new ElementsStore(driver);
-		function = new Functions(driver);
+		function = new CommonFunctions(driver);
 		action = new TouchAction(driver);
 
 	}

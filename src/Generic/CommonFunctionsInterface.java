@@ -1,4 +1,4 @@
-package Generic;
+package generic;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -8,7 +8,7 @@ import org.apache.poi.EncryptedDocumentException;
 import org.openqa.selenium.WebElement;
 import org.w3c.dom.events.EventException;
 
-public interface FunctionsInterface {
+public interface CommonFunctionsInterface {
 	public abstract void tapByLocation(int x, int y);
 
 	public abstract String getExcelData(int r, int c) throws FileNotFoundException, EncryptedDocumentException, DataFormatException, IOException;

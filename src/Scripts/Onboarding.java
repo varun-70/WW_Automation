@@ -1,10 +1,10 @@
-package Scripts;
+package scripts;
 
 import java.util.concurrent.TimeUnit;
 
 import org.testng.annotations.Test;
 
-import Generic.Generic;
+import generic.Generic;
 
 
 public class Onboarding extends Generic {
