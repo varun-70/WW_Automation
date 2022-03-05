@@ -1,4 +1,4 @@
-package generic1;
+package generic;
 
 import java.io.File;
 import java.net.MalformedURLException;
@@ -13,7 +13,7 @@ import org.testng.annotations.BeforeTest;
 import io.appium.java_client.TouchAction;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.remote.MobileCapabilityType;
-import pom1.ElementsStore;
+import pom.ElementsStore;
 
 public class Generic {
 
