@@ -128,18 +128,18 @@ public class CommonFunctions implements CommonFunctionsInterface {
 		return continueWithnButton;
 	}
 	
-   /**
-	* Using swipe gesture on the screen by specifying the location by passing the 
-	* start point (x-axis and y-axis) and end point (x-axis and y-axis) as parameters.
-	* 
-	* X-axis is divided into 4 parts(means 3 points on the screen), 0 is left corner and 4 is right corner of the screen
-	* Y-axis is divided into 7 parts(means 6 points on the screen), 0 is top corner and 6 is bottom corner of the screen
-	* 
-	* @param xStart an integer from 0 to 4 on x-axis, the starting point of x-axis.
-	* @param xEnd an integer from 0 to 7 on y-axis, the end point of x-axis
-	* @param yStart an integer from 0 to 4 on x-axis, the starting point of y-axis
-	* @param yEnd an integer from 0 to 7 on y-axis, the end point of y-axis
-	*/
+    /**
+	 * Using swipe gesture on the screen by specifying the location by passing the 
+	 * start point (x-axis and y-axis) and end point (x-axis and y-axis) as parameters.
+	 * 
+	 * X-axis is divided into 4 parts(means 3 points on the screen), 0 is left corner and 4 is right corner of the screen
+	 * Y-axis is divided into 7 parts(means 6 points on the screen), 0 is top corner and 6 is bottom corner of the screen
+	 * 
+	 * @param xStart an integer from 0 to 4 on x-axis, the starting point of x-axis.
+	 * @param xEnd an integer from 0 to 7 on y-axis, the end point of x-axis
+	 * @param yStart an integer from 0 to 4 on x-axis, the starting point of y-axis
+	 * @param yEnd an integer from 0 to 7 on y-axis, the end point of y-axis
+	 */
 	public void swipingLocation(int xStart, int xEnd, int yStart, int yEnd) {
 		int width=size.width;
 		int height=size.height;
@@ -152,12 +152,12 @@ public class CommonFunctions implements CommonFunctionsInterface {
 				.withDuration(Duration.ofSeconds(1))).moveTo(PointOption.point(endXCoordinate, endYCoordinate)).release().perform();
 	}
 	
-   /** 
-	* Selecting the country code by passing the parameter as country code in int data type.
-	* If the displayed country code and parameters passed are same then it will skip and return
-	* 
-	* @param code an int of country code
-	*/
+    /** 
+	 * Selecting the country code by passing the parameter as country code in int data type.
+	 * If the displayed country code and parameters passed are same then it will skip and return
+ 	 * 
+	 * @param code an int of country code
+ 	 */
 	public void countryCodeSelection(int code) {
 		int countryCode=Integer.parseInt(elements.getCountryCode().getText().substring(1));
 		if(countryCode==code) {
