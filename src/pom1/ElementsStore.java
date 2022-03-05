@@ -1,4 +1,4 @@
-package pom;
+package pom1;
 
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;

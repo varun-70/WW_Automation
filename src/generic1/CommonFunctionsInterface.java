@@ -1,4 +1,4 @@
-package generic;
+package generic1;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;

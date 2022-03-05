@@ -1,10 +1,10 @@
-package scripts;
+package scripts1;
 
 import java.util.concurrent.TimeUnit;
 
 import org.testng.annotations.Test;
 
-import generic.Generic;
+import generic1.Generic;
 
 public class PlayWorldWinners extends Generic{
 	

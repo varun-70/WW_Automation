@@ -1,4 +1,4 @@
-package generic;
+package generic1;
 
 import static io.appium.java_client.touch.LongPressOptions.longPressOptions;
 
@@ -25,7 +25,7 @@ import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.touch.TapOptions;
 import io.appium.java_client.touch.offset.ElementOption;
 import io.appium.java_client.touch.offset.PointOption;
-import pom.ElementsStore;
+import pom1.ElementsStore;
 
 //Used for generic methods
 

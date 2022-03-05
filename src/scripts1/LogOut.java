@@ -1,8 +1,8 @@
-package scripts;
+package scripts1;
 
 import org.testng.annotations.Test;
 
-import generic.Generic;
+import generic1.Generic;
 
 public class LogOut extends Generic{
 	
