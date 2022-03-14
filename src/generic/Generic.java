@@ -13,7 +13,8 @@ import org.testng.annotations.BeforeTest;
 import io.appium.java_client.TouchAction;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.remote.MobileCapabilityType;
-import pom.ElementsStore;
+import pages.ElementsStore;
+import utils.Initialize;
 
 public class Generic {
 
@@ -43,6 +44,7 @@ public class Generic {
 		driver = new AndroidDriver<>(url, dc);
 		elements = new ElementsStore(driver);
 		function = new CommonFunctions(driver);
+		Initialize init = new Initialize(driver);
 		action = new TouchAction(driver);
 
 	}

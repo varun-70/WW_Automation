@@ -2,6 +2,8 @@ package scripts;
 
 import java.util.concurrent.TimeUnit;
 
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
 import org.testng.annotations.Test;
 
 import generic.Generic;
@@ -38,6 +40,16 @@ public class PlayWorldWinners extends Generic{
 		
 		int ele = driver.findElementsByXPath("//android.widget.TextView[@text='DELETE']").size();
 		System.out.println("Number of \"Delete\" elements present "+ele);
+		
+		int ele1 = driver.findElementsByXPath("//android.widget.ScrollView[//android.widget.TextView[@text='DELETE']]").size();
+		System.out.println("Number of \"Delete\" elements present "+ele1);
+		
+		int ele2 = driver.findElementsByXPath("//android.widget.ScrollView//child::android.widget.TextView[@text='DELETE']").size();
+		System.out.println("Number of \"Delete\" elements present "+ele2);
+		
+		WebElement parentElement = driver.findElementByXPath("//android.widget.ScrollView");
+		int childElement = parentElement.findElements(By.xpath("//android.widget.TextView[@text='DELETE']")).size();
+		System.out.println("Number of \"Delete\" elements present "+childElement);
 		
 		// Swiping down(scroll up) on the Play world winners screen
 		for(int i=1; i<=2; i++) {

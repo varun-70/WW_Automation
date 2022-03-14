@@ -5,6 +5,7 @@ import java.util.concurrent.TimeUnit;
 import org.testng.annotations.Test;
 
 import generic.Generic;
+import pages.PhoneNumberScreen;
 
 
 public class Onboarding extends Generic {
@@ -17,7 +18,8 @@ public class Onboarding extends Generic {
 		// Get started screen and Phone number screen
 		elements.getGetStartedOnboarding().click();
 		String phno = function.getExcelData(1, 2);
-		elements.getPhnoFieldOnboarding().sendKeys(phno);
+		PhoneNumberScreen.getPhnoField().sendKeys(phno);
+		//elements.getPhnoFieldOnboarding().sendKeys(phno);
 		driver.hideKeyboard();
 		elements.getCheckBoxPhnoscreenOnboarding().click();
 		function.textAssertion(elements.getHeaderTextPhoneNumber(), "What’s your number?");	

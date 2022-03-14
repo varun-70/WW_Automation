@@ -25,7 +25,7 @@ import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.touch.TapOptions;
 import io.appium.java_client.touch.offset.ElementOption;
 import io.appium.java_client.touch.offset.PointOption;
-import pom.ElementsStore;
+import pages.ElementsStore;
 
 //Used for generic methods
 
@@ -61,7 +61,7 @@ public class CommonFunctions implements CommonFunctionsInterface {
 	 */
 	@Override
 	public String getExcelData(int row, int cell) throws EncryptedDocumentException, IOException  {
-		FileInputStream file = new FileInputStream("./Excel sheet/data.xlsx");
+		FileInputStream file = new FileInputStream("./test-data/data.xlsx");
 		Workbook wb = WorkbookFactory.create(file);
 		Sheet sh = wb.getSheet("Sheet1");
 		Row rowData = sh.getRow(row);
@@ -169,7 +169,7 @@ public class CommonFunctions implements CommonFunctionsInterface {
 		elements.getCountryCodeSelect().click();
 	}
 	
-	// For performing the verification by using assertion
+	/** For performing the verification by using assertion */
 	public void textAssertion(WebElement ele, String expected) {
 		String actual = ele.getText();
 		Assert.assertEquals(actual, expected);
