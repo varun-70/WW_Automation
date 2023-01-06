@@ -1,0 +1,7 @@
+test-output/
+target/
+*.apk
+.DS_Store
+.classpath
+.project
+.settings/
